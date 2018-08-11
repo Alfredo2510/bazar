@@ -1,0 +1,75 @@
+<%include _header%>
+
+<h1>¡Registra todos tus productos!</h1>
+
+
+<div class="modal-dialog back">
+    <div class="modal-content">
+    
+             
+            <hr >  
+            <div class="modal-body">
+
+<form action="/registro-p" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-tag"></span>
+        </span>
+        <input name="name" type="text" class="form-control" placeholder="Nombre del producto" required autofocus />
+    </div>
+</div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-usd"></span>
+            </span>
+                <input name="money" type="number" class="form-control" placeholder="Precio del producto" required />
+        </div>
+    </div> 
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            </span>
+                <select class="form-control" name="category" >                             
+                    <option>Hogar</option>
+                    <option>Ropa</option>
+                    <option>Accesorios</option>
+                </select> 
+        </div>
+    </div> 
+
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-comment"></span>
+            </span>
+                 <textarea name="description" class="form-control" placeholder="Descripción del producto" ></textarea>
+        </div>
+    </div> 
+
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-picture"></span>
+            </span>
+                    <h1> <%= typeof msg != 'undefined' ? msg : '' %></h1>
+                    <label class="btn btn-default btn-block">
+                    <input name="myImage" type="file" hidden>
+                    </label>
+        </div>
+    </div> 
+
+
+    
+    <input type="submit" value="Agregar" class="btn btn-primary btn-block"/>
+    </form>
+
+    </div>
+    </div>
+</div>
+<%include _footer%>

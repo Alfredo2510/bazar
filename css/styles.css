@@ -1,0 +1,88 @@
+h1{
+    font-size: 30px;
+    margin-top: 0px;
+    text-align: center;
+    font-family: initial;
+}
+body{
+    margin: 138px auto;
+    margin-bottom: 0px;
+    background: rgba(145,169,230,1);
+    background: -moz-linear-gradient(left, rgba(145,169,230,1) 0%, rgba(124,222,163,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(145,169,230,1)), color-stop(100%, rgba(124,222,163,1)));
+    background: -webkit-linear-gradient(left, rgba(145,169,230,1) 0%, rgba(124,222,163,1) 100%);
+    background: -o-linear-gradient(left, rgba(145,169,230,1) 0%, rgba(124,222,163,1) 100%);
+    background: -ms-linear-gradient(left, rgba(145,169,230,1) 0%, rgba(124,222,163,1) 100%);
+    background: linear-gradient(to right, rgba(145,169,230,1) 0%, rgba(124,222,163,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91a9e6', endColorstr='#7cdea3', GradientType=1 );
+}
+.modal-content .logo img{
+    width: 100%;
+}
+.modal-dialog{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.modal-content div.logo {
+    width: 200px;
+    margin: auto;
+}
+.modal-heading h2{
+    font-size: 16px;
+    font-family: unset;
+    margin-bottom: 0px;
+}
+#h1-regis{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/*Styles for screen 600px and lower*/
+@media screen and (max-width: 838px) {
+
+  	nav a {
+	  	width: 75px;
+      }
+}
+
+/*Styles for screen 515px and lower*/
+@media only screen and (max-width : 480px) {
+	nav {
+		border-bottom: 0;
+	}
+	nav ul {
+		display: none;
+		height: auto;
+	}
+	nav a#pull {
+		display: block;
+		background-color: #283744;
+		width: 100%;
+		position: relative;
+	}
+	nav a#pull:after {
+		content:"";
+		background: url('http://media02.hongkiat.com/responsive-web-nav/demo/nav-icon.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 10px;
+	}
+}
+
+/*Smartphone*/
+@media only screen and (max-width : 320px) {
+	nav li {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	nav li a {
+		border-bottom: 1px solid #576979;
+	}
+}
+
+
+

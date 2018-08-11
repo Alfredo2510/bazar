@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BAZAAR</title>
+   
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+     <link  rel="stylesheet" type='text/css' href="../css/styles.css">
+     <link  rel="stylesheet" type='text/css' href="../css/header.css">
+     <link  rel="stylesheet" type='text/css' href="../css/footer.css">
+     <script src="../css/js-h.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+</head>
+<body>
+            <nav class="bazar">
+                  <a href="index"><h1>BAZAR</h1></a>  
+                <ul class="bazar">
+              <%if (currentUsers){%>
+                    
+                    <li><a class="sub" href="hogar">Hogar</a></li>
+                    <li><a class="sub" href="#">Ropa</a></li>
+                    <li><a class="sub" href="#">Accesorios</a></li>
+                    <li class="name-u sub perfil">Bienvenido(a) <%=currentUsers.name()%></li>
+                    <li><a class="sub otros" href="registro-p"><i class="fas fa-cloud-upload-alt"></i>Añadir Producto</a></li>
+                    <li><a class="sub otros" href="/salir"><i class="fas fa-sign-out-alt"></i>Salir</a></li>
+                    
+                    
+                    <%}else{%>
+                        <li><a class="sub" href="hogar">Hogar</a></li>
+                        <li><a class="sub" href="#">Ropa</a></li>
+                        <li><a class="sub" href="#">Accesorios</a></li>
+                    <li><a class="sub otros" href="login"><i class="fas fa-sign-in-alt"></i>Inicia Sesión</a></li>
+                    
+                    <%}%>
+                </ul> 
+              
+            </nav>
+            
+            <div class="modal-dialog">
+             
+                    <%errors.forEach (function(error){%>
+                    <div class="alert alert-danger" role="alert">
+                        <%=error%>
+                    </div>
+                   <% })%>
+                   <%infos.forEach(function(info){%>
+                   <div class="alert alert-info"  role="alert">
+                   <%=info%> 
+                   </div>
+                <%})%>
+
+    </div>
+    

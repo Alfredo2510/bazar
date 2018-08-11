@@ -1,0 +1,87 @@
+
+nav.bazar h1{
+    display: inline-block;
+    margin: 0px;
+    line-height: 80px;
+    margin-left: 25px;
+    font-size: 38px;
+    color: white;
+    
+}
+
+nav {
+	height: 80px;
+	width: 100%;
+	background: #0000008a;
+	font-size: 11pt;
+	
+	font-weight: bold;
+	
+    border-bottom: 2px solid #283744;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+nav ul {
+	padding: 0;
+	margin: 0 auto;
+	float: right;
+	height: 40px;
+}
+nav li {
+	display: inline;
+    float: left;
+    padding: 20px 10px;
+}
+nav a {
+	color: #fff;
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	text-shadow: 1px 1px 0px #283744;
+}
+nav li a.sub {
+	
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+nav li:last-child a {
+	border-right: 0;
+}
+nav a.sub:hover , nav a.sub:active  {
+    background-color: #313131;
+    color: white;
+    text-decoration: none;
+}
+nav li:hover{
+    background-color: #313131;
+}
+nav a#pull {
+	display: none;
+}
+nav:hover{
+    background: #000000eb;
+    
+}
+nav ul li a.otros{
+	display: initial;
+	font-size: 13px;
+}
+
+.fa, .fas {
+	font-size: 15px;
+	margin-right: 5px;
+}
+nav li.perfil{
+	display: inline;
+    font-size: 10px;
+    color: #01ffffb8;;
+}
+nav li.name-u{
+	margin-top: 12px;
+    font-family: unset;
+    color: aquamarine;
+}

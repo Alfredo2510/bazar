@@ -1,0 +1,48 @@
+<%include _header%>
+
+
+</div>
+<div class="modal-dialog back">
+		<div class="modal-content">
+            <div class="logo">
+                <img src="../img/rabbit.jpg" alt="Bazar">
+            </div>
+              <h1>BAZAR</h1>
+			
+            <hr >
+            <div class="modal-heading">
+				<h2 class="text-center">Iniciar Sesión</h2>
+			</div>
+			<div class="modal-body">
+				<form action="/login" method="post" role="form">
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input name="username" type="text" class="form-control" placeholder="Nombre de Usuario" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-lock"></span>
+							</span>
+							<input name="password" type="password" class="form-control" placeholder="Contraseña" required/>
+
+						</div>
+
+					</div>
+
+					<div class="form-group text-center">
+						<button type="submit" class="btn btn-success btn-lg">Login</button>
+						<a href="/registrar" class="btn btn-link">Registrarse</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+<%include _footer%>

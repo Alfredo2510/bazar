@@ -1,0 +1,21 @@
+[
+    {
+        "group":"Invitado",
+        "permissions":[
+            {
+                "resource":"/*",
+                "methods": ["GET","POST"],
+                "action":"allow"
+            }
+        ]
+    },{
+        "group":"Comprador",
+        "permissions":[
+         {
+             "resource":"/*",
+             "methods":["GET","POST"],
+             "action":"allow"
+         }   
+        ]
+    }
+]
