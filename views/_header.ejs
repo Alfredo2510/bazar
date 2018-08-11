@@ -20,6 +20,35 @@
      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <style>
+        .dropdown {
+    position: relative;
+    font-size: 10px;
+}
+.dropdown-menu {
+    height: 79px;
+}
+.salir{
+    text-shadow: none;
+
+}
+.pre-salir:hover{
+    color: black;
+    background: white;
+}
+.salir:hover{
+    color: black;
+    background: white;
+}
+nav a.otros{
+    text-decoration: none;
+
+    color: rgb(45, 178, 255)
+}
+li.des{
+    font-size: 10px;
+}
+ </style>
             <nav class="bazar">
                   <a href="index"><h1>BAZAR</h1></a>  
                 <ul class="bazar">
@@ -28,10 +57,12 @@
                     <li><a class="sub" href="hogar">Hogar</a></li>
                     <li><a class="sub" href="Ropa">Ropa</a></li>
                     <li><a class="sub" href="Accesorios">Accesorios</a></li>
-                    <li class="name-u sub perfil">Bienvenido(a) <%=currentUsers.name()%></li>
                     <li><a class="sub otros" href="registro-p"><i class="fas fa-cloud-upload-alt"></i>Añadir Producto</a></li>
-                    <li><a class="sub otros" href="/salir"><i class="fas fa-sign-out-alt"></i>Salir</a></li>
-                    
+                     <li class="dropdown des"> <a class="otros"  data-toggle="dropdown" href="#"><i class="fas fa-user"></i>Bienvenido(a) <%=currentUsers.name()%></a>  
+                        <ul class="dropdown-menu">
+                                <li class="pre-salir"><a class="salir" href="/salir"><i class="fas fa-sign-out-alt"></i>Salir</a></li>
+                        </ul>
+                    </li>
                     
                     <%}else{%>
                         <li><a class="sub" href="hogar">Hogar</a></li>

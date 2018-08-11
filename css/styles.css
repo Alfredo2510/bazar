@@ -5,7 +5,7 @@ h1{
     font-family: initial;
 }
 body{
-    margin: 138px auto;
+    margin: 0px auto;
     margin-bottom: 0px;
     background: rgba(145,169,230,1);
     background: -moz-linear-gradient(left, rgba(145,169,230,1) 0%, rgba(124,222,163,1) 100%);
@@ -20,8 +20,8 @@ body{
     width: 100%;
 }
 .modal-dialog{
-	margin-top: 0px;
 	margin-bottom: 0px;
+	margin-top:0px;
 }
 .modal-content div.logo {
     width: 200px;
