@@ -1,12 +1,9 @@
 <%include _header%>
-
-<%include _slider%>
- <!-- <a href="/registro-p" class="btn btn-primary pull-right">Registrar nuevo celular</a> -->
 <br>
 <style>
     .padre{
         text-align: center;
-        margin-top: 40px;
+        margin-left: 39%;
     }
     .panel-default{
         width: 300px;
@@ -30,30 +27,32 @@ h4{
     padding: 27px 20px;
     background: #ffffffb8;
     margin: 0px;
+    margin-bottom: 30px;
 }
 </style>
-<h1 class="name">Productos destacados</h1>
+    <h1 class="name">Ármate de las mejores prendas</h1>
 <div class="padre">
-    
+
 <% pro.forEach((e) => {%>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <%if (e.name) {%>   
+            <%if (e.category=='Ropa') {%>   
             <% var source = "/uploads/myImage-" %>
             <% source += e.ID %>
             <% source += ".png" %>    
             <img src='<%= source %>' style="width 120px; height: 171px;">
-            <% } else {%>
-            <h3>Sin nombre</h3>
+            <div class="panel-body">            
+                    <h4> <strong>Precio:</strong>  $<%= e.money %> </h4>
+                    <h4><strong>Categoria:</strong>  <%= e.category %></h4>
+                    <h4> <strong>Descripción:</strong> <%= e.description %></h4>
+                </div>
+            <% } else {%> 
+                 <style>
+                     .panel-default{
+                         display: table-footer-group;
+                     }
+                    </style>
             <% } %>
-        </div>
-        <div class="panel-body">            
-            <h3> <%= e.name%></h3>
-            <h4><strong>Precio:</strong>  $<%= e.money %> </h4>
-            <h4> <strong>Categoria:</strong>  <%= e.category %></h4>
-            <h4> <strong>Descripción:</strong> <%= e.description %></h4>
-
-     
         </div>
     </div>
 

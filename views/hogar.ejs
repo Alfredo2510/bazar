@@ -3,6 +3,7 @@
 <style>
     .padre{
         text-align: center;
+        margin-left: 39%;
     }
     .panel-default{
         width: 300px;
@@ -22,9 +23,16 @@
 h4{
     font-size: 13px;
 }
+.name{
+    padding: 27px 20px;
+    background: #ffffffb8;
+    margin: 0px;
+    margin-bottom: 30px;
+}
 </style>
+<h1 class="name">Productos para el Hogar</h1>
 <div class="padre">
-    <h1>Productos para el Hogar</h1>
+    
 <% pro.forEach((e) => {%>
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -34,16 +42,16 @@ h4{
             <% source += ".png" %>    
             <img src='<%= source %>' style="width 120px; height: 171px;">
             <div class="panel-body">            
-                    <h3> <%= e.name%></h3>
-                    <h4>Precio: $<%= e.money %> </h4>
-                    <h4>Categoria: <%= e.category %></h4>
-                    <h4> <%= e.description %></h4>
+                    <h4> <strong>Precio:</strong>  $<%= e.money %> </h4>
+                    <h4><strong>Categoria:</strong>  <%= e.category %></h4>
+                    <h4> <strong>Descripción:</strong> <%= e.description %></h4>
                 </div>
-            <% } else {%>
-                <style> .padre{
-                    display: inline-block;
-                }</style>
-               
+            <% } else {%> 
+                 <style>
+                     .panel-default{
+                         display: table-footer-group;
+                     }
+                    </style>
             <% } %>
         </div>
     </div>

@@ -8,7 +8,6 @@ var HogarSchema = mongoose.Schema({
     ID: {type: String, required: true}
 });
 
-
 var Productos = mongoose.model("Productos", registroSchema);
 
 module.exports=Productos;

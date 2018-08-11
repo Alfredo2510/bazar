@@ -188,6 +188,26 @@ router.get("/hogar", (req, res, next)=>{
     });
 });
 
+router.get("/Ropa", (req, res, next)=>{
+    Hogar.find()
+    .exec((err, pro)=>{
+        if(err)
+        {
+            return next(err);
+        }
+        res.render("Ropa", {pro: pro});
+    });
+});
 
+router.get("/accesorios", (req, res, next)=>{
+    Hogar.find()
+    .exec((err, pro)=>{
+        if(err)
+        {
+            return next(err);
+        }
+        res.render("accesorios", {pro: pro});
+    });
+});
 
 module.exports=router;
