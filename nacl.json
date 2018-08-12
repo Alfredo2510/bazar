@@ -3,13 +3,38 @@
         "group":"Invitado",
         "permissions":[
             {
-                "resource":"/*",
+                "resource": "/registro-p",
                 "methods": ["GET","POST"],
-                "action":"allow"
+                "action": "deny"
+            },{
+                "resource":"/mail",
+                "methods":["GET","POST"],
+                "action":"deny"
+            },{
+                "resource": "/*",
+                "methods": ["GET","POST"],
+                "action": "allow"
             }
         ]
     },{
         "group":"Comprador",
+        "permissions":[
+            {
+                "resource": "/registro-p",
+                "methods": ["GET","POST"],
+                "action": "deny"
+            },{
+                "resource":"/mail",
+                "methods":["GET","POST"],
+                "action":"allow"
+            },{
+             "resource":"/*",
+             "methods":["GET","POST"],
+             "action":"allow"
+         }   
+        ]
+    },{
+        "group":"Vendedor",
         "permissions":[
          {
              "resource":"/*",

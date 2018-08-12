@@ -64,17 +64,15 @@ router.use((req,res,next)=>{
     res.locals.infos=req.flash("info");
 
     if(req.users){
-        req.session.Rol=req.session.Rol;
+        req.session.Rol=req.users.Rol;
     }
 
     if (req.session.Rol==undefined){
         acl.config({
-            baseUrl:'/',
             defaultRole:'Invitado',
         });
     }else{
         acl.config({
-            baseUrl:'/',
             defaultRole:req.session.Rol
         });
     }

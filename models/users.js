@@ -41,6 +41,9 @@ userSchema.methods.checkPassword=function(guess,done){
 userSchema.methods.name=function(){
     return this.username||this.username;
 }
+userSchema.methods.rol=function(){
+    return this.Rol||this.Rol;
+}
 
 var Users=mongoose.model("Users",userSchema);
 module.exports=Users;

@@ -22,7 +22,7 @@ app.set("view engine","ejs");
 
 app.use(express.static('./'));
 app.use(express.static('./public'));
-app.use(favicon(path.join(__dirname, 'public', 'celular.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'rabbit.ico')))
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
