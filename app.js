@@ -6,20 +6,23 @@ var cookieParser= require("cookie-parser"); //puede habilitar el soporte de cook
 var flash= require("connect-flash"); //El flash generalmente se usa en combinación con redireccionamientos, lo que garantiza que el mensaje esté disponible para la próxima página que se va a procesar.
 var session=require("express-session"); //pripiedades de el login del usaurios
 var passport = require("passport"); //Passport es un middleware de autenticación para Node
+var favicon = require('serve-favicon')
 
 var passportsetup = require("./passportsetup");
 var routes= require("./routes"); //
 var app= express();
-                                                        ///////////////////////
 
-                                                        /////////////////
 mongoose.connect("mongodb://bazar:bazar01@ds215172.mlab.com:15172/bazar");
 passportsetup(); 
 
 app.set("views",path.resolve(__dirname,"views"));
-app.set("view engine","ejs"||'handlebars');
+
+
+app.set("view engine","ejs");
+
 app.use(express.static('./'));
 app.use(express.static('./public'));
+app.use(favicon(path.join(__dirname, 'public', 'celular.ico')))
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
@@ -34,9 +37,6 @@ app.use(passport.initialize({
     userProperty:"users"
 }));
 app.use(passport.session());
-
-//app.use(bodyParser.urlencoded({extended:false}));
-
 
 app.use(routes);
 

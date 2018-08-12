@@ -5,7 +5,7 @@ var Hogar = require("./models/registros");
 var passport=require("passport");
 var acl =require('express-acl');
     //equipment
-
+    var favicon = require('serve-favicon');
 const app=express();
 const path = require('path');
 const multer = require('multer');
@@ -17,6 +17,7 @@ const bodyParser = require('body-parser');
 
 app.engine('handlebars', exphbs());
 app.use('/public', express.static(path.join(__dirname,'public')));
+
 app.set("view engine",'handlebars');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -95,26 +96,23 @@ router.post('/mail', (req, res)=>{
 
     let transporter = nodemailer.createTransport({
         service: "Gmail",
-        secure: false, // true for 465, false for other ports
+        secure: false, 
         auth: {
-            user: 'fredonava96@gmail.com', // generated ethereal user
-            pass: 'calamardo' // generated ethereal password
+            user: 'fredonava96@gmail.com',
+            pass: 'calamardo' 
         },
         tls:{
             rejectUnauthorized:false
         }
     });
 
-    // setup email data with unicode symbols
     let mailOptions = {
-        from: 'BAZAR', // sender address
-        to: 'fredonava96@gmail.com', // list of receivers
-        subject: 'Cliente BAZAR', // Subject line
-        text: 'Hello world?', // plain text body
-        html: output // html body
+        from: 'BAZAR', 
+        to: 'fredonava96@gmail.com',
+        subject: 'Cliente BAZAR', 
+        text: 'Hello world?', 
+        html: output 
     };
-
-    // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
