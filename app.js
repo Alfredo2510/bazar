@@ -10,14 +10,14 @@ var passport = require("passport"); //Passport es un middleware de autenticació
 var passportsetup = require("./passportsetup");
 var routes= require("./routes"); //
 var app= express();
+                                                        ///////////////////////
 
-
-
+                                                        /////////////////
 mongoose.connect("mongodb://bazar:bazar01@ds215172.mlab.com:15172/bazar");
 passportsetup(); 
 
 app.set("views",path.resolve(__dirname,"views"));
-app.set("view engine","ejs");
+app.set("view engine","ejs"||'handlebars');
 app.use(express.static('./'));
 app.use(express.static('./public'));
 
