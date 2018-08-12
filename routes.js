@@ -6,9 +6,20 @@ var passport=require("passport");
 var acl =require('express-acl');
     //equipment
 
+const app=express();
 const path = require('path');
 const multer = require('multer');
 
+const exphbs = require('express-handlebars');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+
+
+app.engine('handlebars', exphbs());
+app.use('/public', express.static(path.join(__dirname,'public')));
+app.set("view engine",'handlebars');
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 var ID;
 
 const storage = multer.diskStorage({
@@ -69,6 +80,59 @@ router.use((req,res,next)=>{
     next();
 });
 router.use(acl.authorize);
+
+
+router.post('/mail', (req, res)=>{
+    const output = `
+    <p>Tienes un nuevo correo de usuario BAZAR</p>
+    <h3>Detalles del contacto</h3>
+    <ul>
+        <li>Nombre: ${req.body.name}</li>
+        <li>Correo: ${req.body.email}</li>
+    </ul>
+    <h3>Mensaje</h3>
+    <p>${req.body.message}</p>`;
+
+    let transporter = nodemailer.createTransport({
+        service: "Gmail",
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: 'fredonava96@gmail.com', // generated ethereal user
+            pass: 'calamardo' // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: 'BAZAR', // sender address
+        to: 'fredonava96@gmail.com', // list of receivers
+        subject: 'Cliente BAZAR', // Subject line
+        text: 'Hello world?', // plain text body
+        html: output // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        res.render("index", {pro: pro});
+        console.log('Message sent: %s', info.messageId);
+    });
+});
+router.get("/mail",(req,res,next)=>{
+    Productos.find()
+    .exec((err, pro)=>{
+        if(err)
+        {
+            return next(err);
+        }
+        res.render("index", {pro: pro});
+    });
+});
 
 router.get("/",(req,res,next)=>{
     Productos.find()
