@@ -34,13 +34,12 @@
                             <div class="footer-right">
                 
                                 <p>Contáctanos</p>
-                
-                                <form action="#" method="post">
-                
-                                    <input type="text" name="email" placeholder="Email" />
-                                    <textarea name="message" placeholder="Message"></textarea>
-                                    <button>Send</button>
-                
+                                {{msg}}
+                                <form action="mail" method="post">
+                                     <input type="text" name="name" placeholder="Nombre" required/>
+                                    <input type="email" name="email" placeholder="Correo" required/>
+                                    <textarea name="message" placeholder="Mensaje" required></textarea>
+                                    <button type="submit">Enviar</button>
                                 </form>
                 
                             </div>
